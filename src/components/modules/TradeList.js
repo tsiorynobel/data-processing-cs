@@ -1,9 +1,15 @@
+/*
+* preparer un composant -> affiche liste des trades ligne 24-40
+* Math.ceil :calcule dynamiquement le nombre de pages nécessaires pour afficher toutes les transactions,
+ en arrondissant le résultat
+*/
 import React, { useEffect, useState } from "react";
 import TradeService from "../../services/TradeService";
 import "./TradeList.css";
  
-// Function to format date to French format
+
 const formatDateToFrench = (isoDate) => {
+
   const date = new Date(isoDate);
   return new Intl.DateTimeFormat("fr-FR", {
     year: "numeric",
@@ -13,25 +19,29 @@ const formatDateToFrench = (isoDate) => {
     minute: "2-digit",
     second: "2-digit",
   }).format(date);
+
 };
- 
+
+
 const TradeList = () => {
-  const [trades, setTrades] = useState([]);
+
+  const [,setTrades] = useState([]);
   const [filteredTrades, setFilteredTrades] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
  
   useEffect(() => {
-    // Fetch trades from the service
+
     TradeService.fetchTrades()
       .then((data) => {
         setTrades(data);
         setFilteredTrades(data);
       })
+
       .catch((error) => console.error("Erreur lors du fetch :", error));
+
   }, []);
  
-  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredTrades.slice(indexOfFirstItem, indexOfLastItem);
@@ -50,7 +60,6 @@ const TradeList = () => {
     }
   };
  
-  // Function to calculate trade statistics
   const calculateTradeStats = () => {
     if (filteredTrades.length === 0) {
       return {
@@ -97,28 +106,25 @@ const TradeList = () => {
  
   return (
 <div className="trade-list-container">
-      {/* Résumé des Trades */}
+      {}
 <div className="trade-summary">
 <h2>Résumé des Trades</h2>
 <p>
           Prix maximum : <strong>{max}</strong>
-<span> (le {maxDate})</span>
+<span> | Date : <strong>{maxDate}</strong> </span>
 </p>
 <p>
           Prix minimum : <strong>{min}</strong>
-<span> (le {minDate})</span>
+<span> | Date : <strong> {minDate} </strong> </span>
 </p>
 <p>
           Prix moyen : <strong>{avg}</strong>
-<span>
-            {" "}
-            (entre le {startDate} et le {endDate})
-</span>
+<span> | Date : <strong>{startDate}</strong> <strong>jusqu'au {endDate}</strong></span>
 </p>
 <p>Rentabilité : <strong>{profitability}%</strong></p>
 </div>
  
-      {/* Liste des Trades */}
+
 <div className="trade-list">
 <h2 className="title">Liste des Trades</h2>
 <table className="trades-table">
@@ -140,7 +146,6 @@ const TradeList = () => {
 </tbody>
 </table>
  
-        {/* Pagination controls */}
 <div className="pagination">
 <button
             className="page-button"
