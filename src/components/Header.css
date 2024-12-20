@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1f2937; /* Dark background */
+    color: #fff; /* White text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+   
+  /* Logo styles */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #4f46e5; /* Accent color */
+    text-decoration: none;
+  }
+   
+  /* Navigation styles */
+  .nav {
+    display: flex;
+  }
+   
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+   
+  .nav-links li {
+    margin: 0 15px;
+  }
+   
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+   
+  .nav-links a:hover {
+    color: #4f46e5; /* Accent color on hover */
+  }
