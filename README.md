@@ -1,80 +1,88 @@
-# Getting Started with Create React App
+# DATA PROCESSING FRONTEND
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+**DATA PROCESSING FRONTEND** est une application de visualisation de données financières réalisée avec **React**. Elle permet d'afficher les trades effectués sur **Bitmex** sous forme de tableau, filtrables par dates.  
+L'application propose des statistiques telles que la moyenne, la médiane, le minimum, le maximum et la rentabilité des transactions. Les données sont récupérées via l'API de Bitmex et affichées pour aider à mieux comprendre les performances des trades.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Prérequis
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Avant de commencer, assurez-vous d'avoir installé ou configuré les éléments suivants :  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Node.js** (version 22.12.0 ou supérieure)  
+- **npm** (gestionnaire de paquets Node.js)  
+- **SQLite** (version 3)  
+- Modules requis : `express`, `axios`, `sequelize`, `sqlite3`, `dotenv`  
+- Une connexion Internet stable  
+- Un éditeur de code (par exemple, VS Code ou PyCharm)  
+- **Postman** (ou un outil équivalent) pour tester les requêtes API  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Fonctionnalités
 
-### `npm run build`
+- Affichage des données liées aux trades Bitmex sous forme de tableau.  
+- Visualisation des statistiques financières comme :  
+  - Moyenne  
+  - Médiane  
+  - Valeurs minimales et maximales  
+  - Rentabilité des transactions  
+- Filtrage des données par symbole et par dates.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend : `dataProcessing-ss`
 
-### `npm run eject`
+1. Clonez le dépôt **dataProcessing-ss** sur votre machine locale :  
+   ```bash
+   git clone git@github.com:tsiorynobel/dataProcessingBackEnd.git
+   cd dataProcessingBackEnd
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Installez les dépendances nécessaires :  
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Configurez la base de données SQLite :  
+   ```bash
+   npm install sequelize sqlite3 dotenv
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Lancez le serveur backend :  
+   ```bash
+   node server.js
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-### Clone the repository
+### Frontend : `dataProcessingBitMex-cs`
 
-```bash
-git clone git@github.com:tsiorynobel/data-processing-cs.git
-cd data-processing-cs
-npm install
+1. Clonez le dépôt **dataProcessingBitMex-cs** sur votre machine locale :  
+   ```bash
+   git clone git@github.com:tsiorynobel/dataProcessingBitMex-cs.git
+   cd dataProcessingBitMex-cs
+   ```
 
+2. Installez les dépendances nécessaires :  
+   ```bash
+   npm install
+   ```
 
+3. Démarrez l'application frontend :  
+   ```bash
+   npm start
+   ```
 
+---
 
-## Learn More
+## Notes supplémentaires
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Assurez-vous que le backend est démarré avant de lancer le frontend pour garantir une connexion fluide entre les deux.  
+- Utilisez **Postman** ou un équivalent pour tester les requêtes API et valider les fonctionnalités.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
